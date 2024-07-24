@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rock Paper Scissor</title>
+    <link rel="stylesheet" href="NewRockPaperScissor.css">
+</head>
+<body>
+<div class="container">
+    <p class="title">Rock Paper Scissor</p>
+
+    <!--onclick="playGame('rock');--> <!--line 9 is inside button "Using addEventListener instead of onClick"-->   
+    <button class="button-move js-rock-button"> 
+        <img src="rock-emoji.png" alt="Rock" class="move-icon">
+    </button>
+
+    <!--onclick="playGame('paper');--> <!--line 16 is inside button "Using addEventListener instead of onClick"-->
+    <button class="button-move js-paper-button">
+        <img src="paper-emoji.png" alt="paper" class="move-icon">
+    </button>
+
+    <!--onclick="playGame('scissor');--> <!--line 23 is inside button "Using addEventListener instead of onClick"-->
+    <button class="button-move js-scissor-button">
+        <img src="scissor-emoji.png" alt="Scissor" class="move-icon">
+    </button> 
+
+    <p class="js-result result"></p>
+    <p class="js-moves"></p>
+    <p class="js-score score"></p>
+
+    <button onclick="
+        score.win = 0;
+        score.losses = 0;
+        score.ties = 0;
+        localStorage.removeItem('score'); // removing the score from localStorage, when we reload the page 36 line doesn't exist, doesn't exist means NULL
+        updateScore();" class="reset-score-button">Reset Score
+    </button>
+
+    <button class="auto-play-button" onclick="autoPlay();">Auto Play</button>
+</div>
+<script src="NewRockPaperScissor.js"></script>
+</body>
+</html>
